@@ -1,0 +1,254 @@
+/* ==========================================================================
+   INSTAGRAM RESPONSIVE BREAKPOINTS (DESKTOP, TABLET, MOBILE)
+   ========================================================================== */
+
+/* Mobile Top Header (hidden on desktop) */
+.mobile-top-header {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height-mobile);
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 95;
+}
+
+.mobile-top-header .logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  background: var(--ig-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mobile-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Mobile Bottom Navigation Bar (hidden on desktop) */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--bottom-nav-height);
+  background-color: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+  z-index: 95;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: Large Tablet / Small Laptop (1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+  :root {
+    --sidebar-width: 72px;
+  }
+
+  .sidebar {
+    width: var(--sidebar-collapsed-width);
+    padding: 20px 8px;
+    align-items: center;
+  }
+
+  .sidebar-logo .logo-text {
+    display: none;
+  }
+
+  .sidebar-logo .logo-icon {
+    display: block;
+  }
+
+  .nav-label {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 12px 0;
+    width: 48px;
+    height: 48px;
+  }
+
+  .sidebar-right {
+    display: none;
+  }
+
+  .home-container {
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: Tablet (768px - 991px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .explore-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 240px;
+  }
+
+  .profile-header {
+    gap: 28px;
+  }
+
+  .profile-avatar-large {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   BREAKPOINT: Mobile Phones (767px and below)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-top-header {
+    display: flex;
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    padding: calc(var(--header-height-mobile) + 12px) 0 calc(var(--bottom-nav-height) + 20px) 0;
+  }
+
+  .home-container {
+    padding: 0;
+  }
+
+  .feed-post {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .stories-tray {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 12px 10px;
+  }
+
+  .story-bubble {
+    width: 64px;
+  }
+
+  .story-ring {
+    width: 58px;
+    height: 58px;
+  }
+
+  .explore-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    grid-auto-rows: 120px;
+  }
+
+  .explore-item {
+    border-radius: 0;
+  }
+
+  .explore-overlay {
+    font-size: 11px;
+    gap: 10px;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 16px;
+    gap: 16px;
+  }
+
+  .profile-stats-row {
+    width: 100%;
+    justify-content: space-around;
+    padding: 12px 0;
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .profile-grid-posts {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+  }
+
+  .profile-post-card {
+    border-radius: 0;
+  }
+
+  .messages-wrapper {
+    height: calc(100vh - var(--header-height-mobile) - var(--bottom-nav-height) - 10px);
+    border-radius: 0;
+    border: none;
+  }
+
+  .messages-list-sidebar {
+    width: 100%;
+  }
+
+  .messages-wrapper.in-chat .messages-list-sidebar {
+    display: none;
+  }
+
+  .messages-wrapper.in-chat .chat-main-area {
+    display: flex;
+    width: 100%;
+  }
+
+  .chat-main-area {
+    display: none;
+  }
+
+  .reel-card {
+    width: 100vw;
+    height: calc(100vh - var(--header-height-mobile) - var(--bottom-nav-height) - 10px);
+    border-radius: 0;
+    border: none;
+  }
+
+  .create-post-dialog {
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .create-modal-body {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .create-preview-area {
+    min-height: 300px;
+  }
+
+  .create-details-panel {
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .side-drawer {
+    left: 0;
+    width: 100vw;
+    z-index: 150;
+  }
+}
